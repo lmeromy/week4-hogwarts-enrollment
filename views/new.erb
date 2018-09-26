@@ -1,0 +1,26 @@
+
+<form method="post" action="/students">
+  <label for="first-name"> First Name:</label>
+  <input id="first-name" type="text" name="firstname"/>
+
+  <label for="last-name"> Last Name:</label>
+  <input id="last-name" type="text" name="lastname"/>
+
+  <label for="age">Age:</label>
+  <input id="age" type="number" name="age"/>
+
+  <label for="select-house">House:</label>
+  <select id="select-house" name="house_id">
+  <%  for house in @houses %>
+
+    <option value="<%=house.id%>"><%=house.name%></option>
+  <%  end %>
+  </select>
+
+
+  <input type="submit" value="Enroll Student"/>
+
+  <%# for input or select, the name properties MUST match
+  my database fields!%>
+  <%# for and id must match!!!%>
+</form>

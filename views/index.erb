@@ -1,0 +1,11 @@
+<h2>All Hogwarts Students:</h2>
+
+<div class="container">
+<%for student in @students %>
+  <p>  First Name: <%= student.firstname() %> </p>
+  <p>  Last Name: <%= student.lastname() %> </p>
+  <p>  Age: <%= student.age %> </p>
+  <p>  House Name: <%= student.house.name %> </p>
+  <p><a href="students/<%= student.id%>">Student Information</a></p>
+<% end %>
+</div>
