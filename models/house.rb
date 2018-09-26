@@ -5,14 +5,14 @@ class House
 
   def initialize (options)
     @id = options['id'].to_i
-    @house = options['house']
+    @name = options['name']
 
   end
 
   def save()
     sql = "INSERT INTO houses (name)
     VALUES ($1) RETURNING *"
-    values = [@id]
+    values = [@name]
     house_data = SqlRunner.run(sql, values)
     @id = house_data.first()['id'].to_i
   end
@@ -24,7 +24,7 @@ class House
   end
 
   def find()
-    sql = "SELECT * FROM house WHERE id = $1"
+    sql = "SELECT * FROM houses WHERE id = $1"
     values = [@id]
     results = SqlRunner.run(sql, values)
     house = House.new(results.first)

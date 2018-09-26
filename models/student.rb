@@ -12,7 +12,6 @@ class Student
     @age = options['age'].to_i
   end
 
-
   def save()
     sql = "INSERT INTO students (firstname, lastname, house_id, age)
     VALUES ($1, $2, $3, $4) RETURNING *"
